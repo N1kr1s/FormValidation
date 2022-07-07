@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+$borderRadius: 10px;
+$boxShadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  font-family: inherit;
+  letter-spacing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+  letter-spacing: 2px;
+  @include flex;
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+.container {
+  width: 480px;
+  height: 710px;
+  @include flex;
+  flex-direction: column;
+  background: #b797a151;
+  opacity: 0.9;
+  border-radius: $borderRadius;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.form {
+  @include flex;
+  flex-direction: column;
+  width: 80%;
+  button {
+    width: 40%;
+    border-radius: $borderRadius;
+    border: none;
+    outline: none;
+    height: 35px;
+    margin-top: 10px;
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+    font-size: 23px;
+    cursor: pointer;
+    box-shadow: $boxShadow;
+
+    &:hover {
+      transform: translateY(10%);
+    }
+  }
+}
+
+.form-group {
+  width: 100%;
+  @include flex;
+  flex-direction: column;
+  margin: 15px;
+  label {
+    font-size: 20px;
+  }
+  input {
+    width: 100%;
+    border-radius: $borderRadius;
+    outline: none;
+    border: none;
+    height: 25px;
+    box-shadow: $boxShadow;
+    font-size: 20px;
+    background-color: rgba(226, 226, 226, 0.942);
+    opacity: 0.9;
+    padding-left: 10px;
+
+    &::placeholder {
+      text-align: center;
+      font-size: 15px;
+    }
+  }
+  span {
+    height: 9px;
+    color: red;
+  }
+}
+
+.form-group input.error {
+  border: 1px solid red;
+}
+
+.form-group input.valid {
+  border: 1px solid green;
+}
